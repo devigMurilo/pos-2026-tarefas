@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cardapio SYSTEM "definicoes.dtd">
+<cardapio>
+  <prato id="p1">
+    <nome>Feijoada</nome>
+    <descricao>Prato tradicional brasileiro</descricao>
+    <ingredientes>
+      <ingrediente>Feijao preto</ingrediente>
+      <ingrediente>Carne seca</ingrediente>
+      <ingrediente>Calabresa</ingrediente>
+      <ingrediente>Costelinha suina</ingrediente>
+    </ingredientes>
+    <preco moeda="BRL">&reais; 32,90</preco>
+    <calorias>890</calorias>
+    <tempoPreparo>90 minutos</tempoPreparo>
+  </prato>
+  <prato id="p2">
+    <nome>Salada fitness</nome>
+    <descricao>Salada com alface e molho.</descricao>
+    <ingredientes>
+      <ingrediente>Alface</ingrediente>
+      <ingrediente>Tomate</ingrediente>
+      <ingrediente>Molho</ingrediente>
+    </ingredientes>
+    <preco moeda="USD">$ 2.50</preco>
+    <calorias>40</calorias>
+    <tempoPreparo>7 minutos</tempoPreparo>
+  </prato>
+</cardapio>
