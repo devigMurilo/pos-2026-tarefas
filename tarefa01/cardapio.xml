@@ -26,4 +26,43 @@
     <calorias>40</calorias>
     <tempoPreparo>7 minutos</tempoPreparo>
   </prato>
+  <prato id="p3">
+    <nome>Lasanha a Bolonhesa</nome>
+    <descricao>Massa recheada com carne moida, queijo e molho de tomate.</descricao>
+    <ingredientes>
+      <ingrediente>Massa para lasanha</ingrediente>
+      <ingrediente>Carne moida</ingrediente>
+      <ingrediente>Queijo mussarela</ingrediente>
+      <ingrediente>Molho de tomate</ingrediente>
+    </ingredientes>
+    <preco moeda="BRL">&reais; 28,50</preco>
+    <calorias>760</calorias>
+    <tempoPreparo>50 minutos</tempoPreparo>
+  </prato>
+  <prato id="p4">
+    <nome>Moqueca de Peixe</nome>
+    <descricao>Peixe cozido com leite de coco, cebola e pimentao.</descricao>
+    <ingredientes>
+      <ingrediente>Peixe</ingrediente>
+      <ingrediente>Leite de coco</ingrediente>
+      <ingrediente>Cebola</ingrediente>
+      <ingrediente>Pimentao</ingrediente>
+    </ingredientes>
+    <preco moeda="BRL">&reais; 36,00</preco>
+    <calorias>610</calorias>
+    <tempoPreparo>45 minutos</tempoPreparo>
+  </prato>
+  <prato id="p5">
+    <nome>Panqueca de Frango</nome>
+    <descricao>Panquecas recheadas com frango desfiado e molho especial.</descricao>
+    <ingredientes>
+      <ingrediente>Massa de panqueca</ingrediente>
+      <ingrediente>Frango desfiado</ingrediente>
+      <ingrediente>Molho de tomate</ingrediente>
+      <ingrediente>Queijo ralado</ingrediente>
+    </ingredientes>
+    <preco moeda="BRL">&reais; 24,90</preco>
+    <calorias>540</calorias>
+    <tempoPreparo>30 minutos</tempoPreparo>
+  </prato>
 </cardapio>
