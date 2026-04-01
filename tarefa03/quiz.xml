@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE quiz SYSTEM "quiz.dtd">
+<quiz versao="1.0">
+  <disciplina>Banco de Dados</disciplina>
+  <professor>
+    <nome>Ari Barreto</nome>
+    <matrícula>2026001</matrícula>
+  </professor>
+  <turma>Infoweb 2023.1</turma>
+  <data>2026-04-01</data>
+  <questões>
+    <questão>
+      <enunciado>Qual linguagem é usada para consultar bancos de dados relacionais?</enunciado>
+      <pontuação>2</pontuação>
+      <alternativas>
+        <alternativa correta="sim">SQL</alternativa>
+        <alternativa correta="nao">HTML</alternativa>
+        <alternativa correta="nao">CSS</alternativa>
+        <alternativa correta="nao">JSON</alternativa>
+      </alternativas>
+    </questão>
+
+    <questão>
+      <enunciado>Qual comando SQL é utilizado para recuperar dados?</enunciado>
+      <pontuação>2</pontuação>
+      <alternativas>
+        <alternativa correta="sim">SELECT</alternativa>
+        <alternativa correta="nao">DELETE</alternativa>
+        <alternativa correta="nao">DROP</alternativa>
+        <alternativa correta="nao">UPDATE</alternativa>
+      </alternativas>
+    </questão>
+
+    <questão>
+      <enunciado>Em modelagem relacional, uma chave primária deve ser:</enunciado>
+      <pontuação>2</pontuação>
+      <alternativas>
+        <alternativa correta="sim">Única para cada registro</alternativa>
+        <alternativa correta="nao">Sempre textual</alternativa>
+        <alternativa correta="nao">Opcional em toda tabela</alternativa>
+        <alternativa correta="nao">Igual para todos os registros</alternativa>
+      </alternativas>
+    </questão>
+
+    <questão>
+      <enunciado>Qual forma normal busca eliminar dependências parciais?</enunciado>
+      <pontuação>2</pontuação>
+      <alternativas>
+        <alternativa correta="nao">Primeira Forma Normal</alternativa>
+        <alternativa correta="sim">Segunda Forma Normal</alternativa>
+        <alternativa correta="nao">Forma Normal de Boyce-Codd</alternativa>
+        <alternativa correta="nao">Quarta Forma Normal</alternativa>
+      </alternativas>
+    </questão>
+
+    <questão>
+      <enunciado>Qual cláusula SQL é usada para filtrar registros retornados por uma consulta?</enunciado>
+      <pontuação>2</pontuação>
+      <alternativas>
+        <alternativa correta="nao">ORDER BY</alternativa>
+        <alternativa correta="nao">GROUP BY</alternativa>
+        <alternativa correta="sim">WHERE</alternativa>
+        <alternativa correta="nao">JOIN</alternativa>
+      </alternativas>
+    </questão>
+  </questões>
+</quiz>
