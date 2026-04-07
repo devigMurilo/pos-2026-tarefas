@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Crie um XML Schema básico para um prato (elemento raiz) que tenha os elementos:
+
+    nome (string com 100 caracteres no máximo)
+    refeição (café, almoço ou janta)
+    ingredientes com os sub-elementos ingrediente (pelo menos um)
+    preço (decimal com duas casas)
+    dataCadastro (data)
+
+Crie um XML que use o schema acima e valide no VS Code.-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://cartaodevisitas.org"
+           xmlns="http://cartaodevisitas.org"
+           elementFormDefault="qualified">
+    <xs:element name="prato">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="100"></xs:maxLength>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="refeição">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="café"></xs:enumeration>
+                            <xs:enumeration value="almoço"></xs:enumeration>
+                            <xs:enumeration value="janta"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="ingredientes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ingrediente" maxOccurs="unbounded">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="preço">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:decimal">
+                            <xs:totalDigits value="10"></xs:totalDigits>
+                            <xs:fractionDigits value="2"></xs:fractionDigits>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
