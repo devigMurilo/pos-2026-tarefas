@@ -1,0 +1,51 @@
+{
+  "cardapio": {
+    "pratos": [
+      {
+        "id": 1,
+        "nome": "Feijoada à Brasileira",
+        "descricao": "Prato tradicional brasileiro feito com feijão preto e carne de porco",
+        "ingredientes": [
+          "Feijão Preto",
+          "Carne de Porco",
+          "Cebola",
+          "Alho",
+          "Sal"
+        ],
+        "preco": 45.50,
+        "calorias": 650,
+        "tempoPreparo": "2 horas"
+      },
+      {
+        "id": 2,
+        "nome": "Moqueca de Peixe",
+        "descricao": "Peixe cozido lentamente em molho de leite de coco, tomate e dendê",
+        "ingredientes": [
+          "Peixe",
+          "Leite de Coco",
+          "Tomate",
+          "Dendê",
+          "Cebola",
+          "Pimentão"
+        ],
+        "preco": 52.75,
+        "calorias": 480,
+        "tempoPreparo": "1 hora e 30 minutos"
+      },
+      {
+        "id": 3,
+        "nome": "Brigadeiro",
+        "descricao": "Doce tradicional brasileiro feito com chocolate condensado",
+        "ingredientes": [
+          "Leite Condensado",
+          "Chocolate em Pó",
+          "Manteiga",
+          "Granulado de Chocolate"
+        ],
+        "preco": 8.99,
+        "calorias": 320,
+        "tempoPreparo": "20 minutos"
+      }
+    ]
+  }
+}

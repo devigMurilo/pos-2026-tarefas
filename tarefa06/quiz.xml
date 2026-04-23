@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz versao="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="quiz.xsd">
+    
+    <disciplina>Programação Web</disciplina>
+    
+    <professor>
+        <nome>Dr. Carlos Silva</nome>
+        <matrícula>2023001</matrícula>
+    </professor>
+    
+    <turma>CSI-2A</turma>
+    
+    <data>2026-04-23</data>
+    
+    <questões>
+        
+        <questão>
+            <enunciado>Qual é a função principal de um XSD?</enunciado>
+            <pontuação>2.5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">Definir a estrutura visual de um documento XML</alternativa>
+                <alternativa correta="sim">Validar e descrever a estrutura de um documento XML</alternativa>
+                <alternativa correta="nao">Converter XML para HTML automaticamente</alternativa>
+                <alternativa correta="nao">Comprimir dados em formato XML</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Qual é a diferença entre um elemento obrigatório e um opcional em XSD?</enunciado>
+            <pontuação>2.5</pontuação>
+            <alternativas>
+                <alternativa correta="nao">Não há diferença, são equivalentes</alternativa>
+                <alternativa correta="sim">Um elemento obrigatório deve estar presente, enquanto um opcional pode não estar</alternativa>
+                <alternativa correta="nao">Um elemento opcional é sempre vazio</alternativa>
+                <alternativa correta="nao">Um elemento obrigatório não pode ter atributos</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>O que significa minOccurs="0" em XSD?</enunciado>
+            <pontuação>2.0</pontuação>
+            <alternativas>
+                <alternativa correta="nao">O elemento deve aparecer no mínimo 0 vezes e no máximo 1 vez</alternativa>
+                <alternativa correta="sim">O elemento é opcional e pode não aparecer no documento</alternativa>
+                <alternativa correta="nao">O elemento deve ter conteúdo mínimo de 0 caracteres</alternativa>
+                <alternativa correta="nao">O elemento não é permitido no documento</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Qual atributo XSD limita o número máximo de ocorrências de um elemento?</enunciado>
+            <pontuação>2.0</pontuação>
+            <alternativas>
+                <alternativa correta="nao">minOccurs</alternativa>
+                <alternativa correta="sim">maxOccurs</alternativa>
+                <alternativa correta="nao">maxLength</alternativa>
+                <alternativa correta="nao">type</alternativa>
+            </alternativas>
+        </questão>
+
+        <questão>
+            <enunciado>Como definir um atributo obrigatório em XSD?</enunciado>
+            <pontuação>2.0</pontuação>
+            <alternativas>
+                <alternativa correta="nao">use="required" em xs:element</alternativa>
+                <alternativa correta="sim">use="required" em xs:attribute</alternativa>
+                <alternativa correta="nao">minOccurs="1" em xs:attribute</alternativa>
+                <alternativa correta="nao">required="true" em xs:attribute</alternativa>
+            </alternativas>
+        </questão>
+
+    </questões>
+
+</quiz>

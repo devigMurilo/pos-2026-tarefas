@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cardapio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="cardapio.xsd">
+    
+    <prato id="1">
+        <nome>Feijoada à Brasileira</nome>
+        <descricao>Prato tradicional brasileiro feito com feijão preto e carne de porco</descricao>
+        <ingredientes>
+            <ingrediente>Feijão Preto</ingrediente>
+            <ingrediente>Carne de Porco</ingrediente>
+            <ingrediente>Cebola</ingrediente>
+            <ingrediente>Alho</ingrediente>
+            <ingrediente>Sal</ingrediente>
+        </ingredientes>
+        <preco>45.50</preco>
+        <calorias>650</calorias>
+        <tempoPreparo>2 horas</tempoPreparo>
+    </prato>
+
+    <prato id="2">
+        <nome>Moqueca de Peixe</nome>
+        <descricao>Peixe cozido lentamente em molho de leite de coco, tomate e dendê</descricao>
+        <ingredientes>
+            <ingrediente>Peixe</ingrediente>
+            <ingrediente>Leite de Coco</ingrediente>
+            <ingrediente>Tomate</ingrediente>
+            <ingrediente>Dendê</ingrediente>
+            <ingrediente>Cebola</ingrediente>
+            <ingrediente>Pimentão</ingrediente>
+        </ingredientes>
+        <preco>52.75</preco>
+        <calorias>480</calorias>
+        <tempoPreparo>1 hora e 30 minutos</tempoPreparo>
+    </prato>
+
+    <prato id="3">
+        <nome>Brigadeiro</nome>
+        <descricao>Doce tradicional brasileiro feito com chocolate condensado</descricao>
+        <ingredientes>
+            <ingrediente>Leite Condensado</ingrediente>
+            <ingrediente>Chocolate em Pó</ingrediente>
+            <ingrediente>Manteiga</ingrediente>
+            <ingrediente>Granulado de Chocolate</ingrediente>
+        </ingredientes>
+        <preco>8.99</preco>
+        <calorias>320</calorias>
+        <tempoPreparo>20 minutos</tempoPreparo>
+    </prato>
+
+</cardapio>

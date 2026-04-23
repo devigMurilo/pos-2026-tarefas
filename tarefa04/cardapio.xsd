@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="cardapio">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prato" type="PratoType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="PratoType">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="descricao" type="xs:string"/>
+            <xs:element name="ingredientes" type="IngredientesType"/>
+            <xs:element name="preco" type="PrecoType"/>
+            <xs:element name="calorias" type="xs:integer"/>
+            <xs:element name="tempoPreparo" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="IngredientesType">
+        <xs:sequence>
+            <xs:element name="ingrediente" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="PrecoType">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

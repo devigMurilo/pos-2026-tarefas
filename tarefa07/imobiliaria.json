@@ -1,0 +1,140 @@
+{
+  "imobiliaria": {
+    "imoveis": [
+      {
+        "descricao": "Apartamento moderno em condomínio fechado com piscina e academia",
+        "proprietario": {
+          "nome": "Carlos Alberto Silva",
+          "emails": [
+            "carlos.silva@email.com"
+          ],
+          "telefones": [
+            "(11) 98765-4321",
+            "(11) 3456-7890"
+          ]
+        },
+        "endereco": {
+          "rua": "Avenida Paulista",
+          "bairro": "Bela Vista",
+          "cidade": "São Paulo",
+          "numero": 1500
+        },
+        "caracteristicas": {
+          "tamanho": 120.50,
+          "numQuartos": 3,
+          "numBanheiros": 2
+        },
+        "valor": "R$ 850.000,00"
+      },
+      {
+        "descricao": "Casa em lote de 500m² com jardim e garagem para 2 carros",
+        "proprietario": {
+          "nome": "Maria Santos Costa",
+          "telefones": [
+            "(21) 99876-5432"
+          ]
+        },
+        "endereco": {
+          "rua": "Rua das Flores",
+          "bairro": "Jardins",
+          "cidade": "Rio de Janeiro",
+          "numero": 250
+        },
+        "caracteristicas": {
+          "tamanho": 350.00,
+          "numQuartos": 4,
+          "numBanheiros": 3
+        },
+        "valor": "R$ 1.200.000,00"
+      },
+      {
+        "descricao": "Studio compacto próximo à universidade, ideal para estudantes",
+        "proprietario": {
+          "nome": "João Pedro Oliveira",
+          "emails": [
+            "joao.pedro@email.com",
+            "joao@empresa.com"
+          ],
+          "telefones": [
+            "(31) 98765-1234"
+          ]
+        },
+        "endereco": {
+          "rua": "Rua Central",
+          "bairro": "Centro",
+          "cidade": "Belo Horizonte"
+        },
+        "caracteristicas": {
+          "tamanho": 45.75,
+          "numQuartos": 1,
+          "numBanheiros": 1
+        },
+        "valor": "R$ 250.000,00"
+      },
+      {
+        "descricao": "Cobertura duplex de luxo com vista panorâmica e terraço gourmet",
+        "proprietario": {
+          "nome": "Patricia Gomes Alves",
+          "emails": [
+            "patricia.gomes@email.com",
+            "p.gomes@empresa.com"
+          ],
+          "telefones": [
+            "(85) 98765-4321",
+            "(85) 3432-1098"
+          ]
+        },
+        "endereco": {
+          "rua": "Rua Getúlio Vargas",
+          "bairro": "Meireles",
+          "cidade": "Fortaleza",
+          "numero": 800
+        },
+        "caracteristicas": {
+          "tamanho": 280.30,
+          "numQuartos": 4,
+          "numBanheiros": 4
+        },
+        "valor": "R$ 2.100.000,00"
+      },
+      {
+        "descricao": "Sala comercial bem localizada em zona comercial movimentada",
+        "proprietario": {
+          "nome": "Roberto Mendes Ferreira"
+        },
+        "endereco": {
+          "rua": "Avenida Brasil",
+          "bairro": "Comércio",
+          "cidade": "Salvador",
+          "numero": 2000
+        },
+        "caracteristicas": {
+          "tamanho": 150.00,
+          "numQuartos": 0,
+          "numBanheiros": 2
+        },
+        "valor": "R$ 400.000,00"
+      },
+      {
+        "descricao": "Terreno em condomínio fechado, ideal para construção residencial",
+        "proprietario": {
+          "nome": "Ana Fernanda Costa",
+          "telefones": [
+            "(47) 99999-5555"
+          ]
+        },
+        "endereco": {
+          "rua": "Estrada da Mata",
+          "bairro": "Zona Rural",
+          "cidade": "Blumenau"
+        },
+        "caracteristicas": {
+          "tamanho": 500.50,
+          "numQuartos": 0,
+          "numBanheiros": 0
+        },
+        "valor": "R$ 150.000,00"
+      }
+    ]
+  }
+}

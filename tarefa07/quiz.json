@@ -1,0 +1,124 @@
+{
+  "quiz": {
+    "versao": "1.0",
+    "disciplina": "Programação Web",
+    "professor": {
+      "nome": "Dr. Carlos Silva",
+      "matrícula": "2023001"
+    },
+    "turma": "CSI-2A",
+    "data": "2026-04-23",
+    "questões": [
+      {
+        "enunciado": "Qual é a função principal de um XSD?",
+        "pontuação": 2.5,
+        "alternativas": [
+          {
+            "texto": "Definir a estrutura visual de um documento XML",
+            "correta": "nao"
+          },
+          {
+            "texto": "Validar e descrever a estrutura de um documento XML",
+            "correta": "sim"
+          },
+          {
+            "texto": "Converter XML para HTML automaticamente",
+            "correta": "nao"
+          },
+          {
+            "texto": "Comprimir dados em formato XML",
+            "correta": "nao"
+          }
+        ]
+      },
+      {
+        "enunciado": "Qual é a diferença entre um elemento obrigatório e um opcional em XSD?",
+        "pontuação": 2.5,
+        "alternativas": [
+          {
+            "texto": "Não há diferença, são equivalentes",
+            "correta": "nao"
+          },
+          {
+            "texto": "Um elemento obrigatório deve estar presente, enquanto um opcional pode não estar",
+            "correta": "sim"
+          },
+          {
+            "texto": "Um elemento opcional é sempre vazio",
+            "correta": "nao"
+          },
+          {
+            "texto": "Um elemento obrigatório não pode ter atributos",
+            "correta": "nao"
+          }
+        ]
+      },
+      {
+        "enunciado": "O que significa minOccurs=\"0\" em XSD?",
+        "pontuação": 2.0,
+        "alternativas": [
+          {
+            "texto": "O elemento deve aparecer no mínimo 0 vezes e no máximo 1 vez",
+            "correta": "nao"
+          },
+          {
+            "texto": "O elemento é opcional e pode não aparecer no documento",
+            "correta": "sim"
+          },
+          {
+            "texto": "O elemento deve ter conteúdo mínimo de 0 caracteres",
+            "correta": "nao"
+          },
+          {
+            "texto": "O elemento não é permitido no documento",
+            "correta": "nao"
+          }
+        ]
+      },
+      {
+        "enunciado": "Qual atributo XSD limita o número máximo de ocorrências de um elemento?",
+        "pontuação": 2.0,
+        "alternativas": [
+          {
+            "texto": "minOccurs",
+            "correta": "nao"
+          },
+          {
+            "texto": "maxOccurs",
+            "correta": "sim"
+          },
+          {
+            "texto": "maxLength",
+            "correta": "nao"
+          },
+          {
+            "texto": "type",
+            "correta": "nao"
+          }
+        ]
+      },
+      {
+        "enunciado": "Como definir um atributo obrigatório em XSD?",
+        "pontuação": 2.0,
+        "alternativas": [
+          {
+            "texto": "use=\"required\" em xs:element",
+            "correta": "nao"
+          },
+          {
+            "texto": "use=\"required\" em xs:attribute",
+            "correta": "sim"
+          },
+          {
+            "texto": "minOccurs=\"1\" em xs:attribute",
+            "correta": "nao"
+          },
+          {
+            "texto": "required=\"true\" em xs:attribute",
+            "correta": "nao"
+          }
+        ]
+      }
+    ]
+  }
+}
