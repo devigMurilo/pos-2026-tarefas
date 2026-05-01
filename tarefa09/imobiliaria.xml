@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imobiliaria>
+    
+    <imovel>
+        <descricao>Apartamento moderno em condomínio fechado com piscina e academia</descricao>
+        <proprietario>
+            <nome>Carlos Alberto Silva</nome>
+            <email>carlos.silva@email.com</email>
+            <telefone>(11) 98765-4321</telefone>
+            <telefone>(11) 3456-7890</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Avenida Paulista</rua>
+            <bairro>Bela Vista</bairro>
+            <cidade>São Paulo</cidade>
+            <numero>1500</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>120.50</tamanho>
+            <numQuartos>3</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 850.000,00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Casa em lote de 500m² com jardim e garagem para 2 carros</descricao>
+        <proprietario>
+            <nome>Maria Santos Costa</nome>
+            <telefone>(21) 99876-5432</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua das Flores</rua>
+            <bairro>Jardins</bairro>
+            <cidade>Rio de Janeiro</cidade>
+            <numero>250</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>350.00</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>3</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 1.200.000,00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Studio compacto próximo à universidade, ideal para estudantes</descricao>
+        <proprietario>
+            <nome>João Pedro Oliveira</nome>
+            <email>joao.pedro@email.com</email>
+            <email>joao@empresa.com</email>
+            <telefone>(31) 98765-1234</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua Central</rua>
+            <bairro>Centro</bairro>
+            <cidade>Belo Horizonte</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>45.75</tamanho>
+            <numQuartos>1</numQuartos>
+            <numBanheiros>1</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 250.000,00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Cobertura duplex de luxo com vista panorâmica e terraço gourmet</descricao>
+        <proprietario>
+            <nome>Patricia Gomes Alves</nome>
+            <email>patricia.gomes@email.com</email>
+            <email>p.gomes@empresa.com</email>
+            <telefone>(85) 98765-4321</telefone>
+            <telefone>(85) 3432-1098</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua Getúlio Vargas</rua>
+            <bairro>Meireles</bairro>
+            <cidade>Fortaleza</cidade>
+            <numero>800</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>280.30</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>4</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 2.100.000,00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Sala comercial bem localizada em zona comercial movimentada</descricao>
+        <proprietario>
+            <nome>Roberto Mendes Ferreira</nome>
+        </proprietario>
+        <endereco>
+            <rua>Avenida Brasil</rua>
+            <bairro>Comércio</bairro>
+            <cidade>Salvador</cidade>
+            <numero>2000</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>150.00</tamanho>
+            <numQuartos>0</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 400.000,00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Terreno em condomínio fechado, ideal para construção residencial</descricao>
+        <proprietario>
+            <nome>Ana Fernanda Costa</nome>
+            <telefone>(47) 99999-5555</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Estrada da Mata</rua>
+            <bairro>Zona Rural</bairro>
+            <cidade>Blumenau</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>500.50</tamanho>
+            <numQuartos>0</numQuartos>
+            <numBanheiros>0</numBanheiros>
+        </caracteristicas>
+        <valor>R$ 150.000,00</valor>
+    </imovel>
+
+</imobiliaria>
