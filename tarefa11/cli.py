@@ -1,90 +1,76 @@
-from users_wrapper import (
-    get_users,
-    get_user,
-    create_user,
-    update_user,
-    delete_user,
-    get_user_todos
-)
+from users_wrapper import *
 
 while True:
-    print("\n===== MENU =====")
-    print("1 - Listar todos usuários")
-    print("2 - Listar tarefas de um usuário")
-    print("3 - Criar usuário")
-    print("4 - Ler usuário por ID")
-    print("5 - Atualizar usuário")
-    print("6 - Deletar usuário")
-    print("0 - Sair")
+    print("\n1-Listar")
+    print("2-Tarefas")
+    print("3-Criar")
+    print("4-Buscar")
+    print("5-Atualizar")
+    print("6-Deletar")
+    print("0-Sair")
 
-    option = input("Escolha uma opção: ")
+    op = input("Opção: ")
 
-    
-    if option == "1":
+    if op == "1":
         users = get_users()
 
-        for user in users:
-            print(f'{user["id"]} - {user["name"]}')
+        for u in users:
+            print(u["id"], "-", u["name"])
 
-    
-    elif option == "2":
-        user_id = input("ID do usuário: ")
+
+    elif op == "2":
+        user_id = input("ID: ")
 
         todos = get_user_todos(user_id)
 
-        for todo in todos:
-            status = "[x]" if todo["completed"] else "[ ]"
-            print(f'{status} {todo["title"]}')
+        for t in todos:
+            print("-", t["title"])
 
-    
-    elif option == "3":
-        name = input("Nome: ")
+
+    elif op == "3":
+        nome = input("Nome: ")
         email = input("Email: ")
 
-        new_user = create_user({
-            "name": name,
+        user = create_user({
+            "name": nome,
             "email": email
         })
 
-        print("Usuário criado:")
-        print(new_user)
+        print(user)
 
 
-    elif option == "4":
-        user_id = input("ID do usuário: ")
+    elif op == "4":
+        user_id = input("ID: ")
 
         user = get_user(user_id)
 
         print(user)
 
-    
-    elif option == "5":
-        user_id = input("ID do usuário: ")
 
-        name = input("Novo nome: ")
+    elif op == "5":
+        user_id = input("ID: ")
+
+        nome = input("Novo nome: ")
         email = input("Novo email: ")
 
-        updated_user = update_user(user_id, {
-            "name": name,
+        user = update_user(user_id, {
+            "name": nome,
             "email": email
         })
 
-        print("Usuário atualizado:")
-        print(updated_user)
-
-    
-    elif option == "6":
-        user_id = input("ID do usuário: ")
-
-        success = delete_user(user_id)
-
-        if success:
-            print("Usuário deletado com sucesso!")
+        print(user)
 
 
-    elif option == "0":
-        print("Encerrando...")
+    elif op == "6":
+        user_id = input("ID: ")
+
+        delete_user(user_id)
+
+        print("Deletado")
+
+
+    elif op == "0":
         break
 
     else:
-        print("Opção inválida!")
+        print("Inválido")
