@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Perfil do usuario</p>
+        <h1>{{ current_user.name }}</h1>
+        <p>{{ current_user.email or "Email nao informado" }}</p>
+    </div>
+    <img class="hero-avatar" src="{{ current_user.avatar_url }}" alt="Avatar de {{ current_user.name }}">
+</section>
+
+<section class="stats-grid">
+    <article>
+        <span>Matricula</span>
+        <strong>{{ current_user.username }}</strong>
+    </article>
+    <article>
+        <span>Curso</span>
+        <strong>{{ student.get("curso") | pretty }}</strong>
+    </article>
+    <article>
+        <span>Situacao</span>
+        <strong>{{ student.get("situacao") | pretty }}</strong>
+    </article>
+    <article>
+        <span>IRA</span>
+        <strong>{{ student.get("ira") | pretty }}</strong>
+    </article>
+</section>
+
+<section class="two-columns">
+    <article class="panel">
+        <h2>Dados principais</h2>
+        <div class="data-list">
+            {% for key, value in profile.items() %}
+                <div>
+                    <span>{{ key | label }}</span>
+                    <strong>{{ value | pretty }}</strong>
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+
+    <article class="panel">
+        <h2>Dados academicos</h2>
+        <div class="data-list">
+            {% for key, value in student.items() %}
+                <div>
+                    <span>{{ key | label }}</span>
+                    <strong>{{ value | pretty }}</strong>
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+{% endblock %}

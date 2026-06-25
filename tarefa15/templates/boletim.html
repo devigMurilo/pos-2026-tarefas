@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Boletim{% endblock %}
+
+{% block content %}
+<section class="page-header compact">
+    <div>
+        <p class="eyebrow">Boletim academico</p>
+        <h1>Notas e frequencia</h1>
+        <p>{{ boletim.get("count", 0) }} disciplina(s) encontradas para {{ selected_year }}.{{ selected_period }}</p>
+    </div>
+
+    <form class="filter-form" method="get">
+        <label>
+            Ano
+            <select name="ano">
+                {% for year in years %}
+                    <option value="{{ year }}" {% if year == selected_year %}selected{% endif %}>{{ year }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>
+            Periodo
+            <select name="periodo">
+                <option value="1" {% if selected_period == 1 %}selected{% endif %}>1</option>
+                <option value="2" {% if selected_period == 2 %}selected{% endif %}>2</option>
+            </select>
+        </label>
+        <button class="secondary-button" type="submit">Buscar</button>
+    </form>
+</section>
+
+<section class="panel table-panel">
+    {% if boletim.get("results") %}
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>Etapa 1</th>
+                        <th>Etapa 2</th>
+                        <th>Etapa 3</th>
+                        <th>Etapa 4</th>
+                        <th>Final</th>
+                        <th>Media</th>
+                        <th>Faltas</th>
+                        <th>Situacao</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in boletim.results %}
+                        <tr>
+                            <td>
+                                <strong>{{ item.disciplina | pretty }}</strong>
+                                <span>{{ item.codigo_diario | pretty }}</span>
+                            </td>
+                            <td>{{ item.nota_etapa_1.nota | pretty }}</td>
+                            <td>{{ item.nota_etapa_2.nota | pretty }}</td>
+                            <td>{{ item.nota_etapa_3.nota | pretty }}</td>
+                            <td>{{ item.nota_etapa_4.nota | pretty }}</td>
+                            <td>{{ item.nota_avaliacao_final.nota | pretty }}</td>
+                            <td>{{ item.media_final_disciplina or item.media_disciplina | pretty }}</td>
+                            <td>{{ item.numero_faltas | pretty }}</td>
+                            <td><span class="status-pill">{{ item.situacao | pretty }}</span></td>
+                        </tr>
+                        <tr class="details-row">
+                            <td colspan="9">
+                                <details>
+                                    <summary>Dados completos da API</summary>
+                                    <div class="full-data">
+                                        {% for key, value in item.items() %}
+                                            <div>
+                                                <span>{{ key | label }}</span>
+                                                <code>{{ value | pretty }}</code>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </details>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h2>Nenhum dado encontrado</h2>
+            <p>Escolha outro ano ou periodo para consultar o boletim.</p>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Entrar com SUAP{% endblock %}
+
+{% block content %}
+<section class="login-shell">
+    <div class="intro-panel">
+        <p class="eyebrow">Integracao academica</p>
+        <h1>Consulte seu perfil e boletim do SUAP em uma interface mais direta.</h1>
+        <p class="lead">
+            A aplicacao usa a API oficial do SUAP IFRN para autenticar, buscar seus dados academicos e apresentar suas notas por ano e periodo.
+        </p>
+
+        <div class="feature-grid">
+            <div>
+                <strong>Perfil</strong>
+                <span>Dados principais do usuario e informacoes academicas.</span>
+            </div>
+            <div>
+                <strong>Boletim</strong>
+                <span>Notas, faltas, medias, situacao e dados completos da API.</span>
+            </div>
+            <div>
+                <strong>Sessao</strong>
+                <span>Navbar com nome, matricula, avatar e logout.</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="login-card">
+        <div class="secundary-button suap-login"">
+           <h2>Faça login:</h2>
+            
+        </div>
+        <form class="fallback-login" method="post" action="{{ url_for('login') }}">
+            <label>
+                Usuario ou matricula
+                <input name="username" autocomplete="username" placeholder="20231181110022" required>
+            </label>
+
+            <label>
+                Senha
+                <input name="password" type="password" autocomplete="current-password" required>
+            </label>
+
+            <button class="primary-button" type="submit">Entrar pela API</button>
+        </form>
+    </section>
+</section>
+{% endblock %}
