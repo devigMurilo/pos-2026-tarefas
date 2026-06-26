@@ -6,6 +6,7 @@ from pathlib import Path
 from flask.cli import load_dotenv
 import requests
 from flask import Flask, flash, redirect, render_template, request, session, url_for
+from authlib.integrations.flask_client import OAuth
 
 
 load_dotenv()
@@ -21,8 +22,7 @@ oauth.register(
     client_secret=os.getenv("CLIENT_SECRET"),
     access_token_url="https://suap.ifrn.edu.br/o/token/",
     authorize_url="https://suap.ifrn.edu.br/o/authorize/",
-    api_base_url="https://suap.ifrn.edu.br/api/v2/",
-    client_kwargs={"scope": "read"},
+    api_base_url="https://suap.ifrn.edu.br/api/",
 )
 
 
@@ -36,9 +36,6 @@ def login_required(f):
 
     return decorated_function
 
-SUAP_API_URL = "https://suap.ifrn.edu.br/api"
-SUAP_OAUTH_AUTHORIZE_URL = "https://suap.ifrn.edu.br/o/authorize/"
-SUAP_OAUTH_TOKEN_URL = "https://suap.ifrn.edu.br/o/token/"
 
 
 def load_env():
@@ -54,13 +51,7 @@ def load_env():
         os.environ.setdefault(key.strip(), value.strip())
 
 
-load_env()
 
-app = Flask(__name__)
-app.secret_key = os.getenv("FLASK_SECRET_KEY", "troque-esta-chave-em-producao")
-app.config["SUAP_OAUTH_CLIENT_ID"] = os.getenv("SUAP_OAUTH_CLIENT_ID", "")
-app.config["SUAP_OAUTH_CLIENT_SECRET"] = os.getenv("SUAP_OAUTH_CLIENT_SECRET", "")
-app.config["SUAP_OAUTH_REDIRECT_URI"] = os.getenv("SUAP_OAUTH_REDIRECT_URI", "")
 
 
 def suap_request(method, path, token=None, **kwargs):
@@ -70,7 +61,7 @@ def suap_request(method, path, token=None, **kwargs):
 
     response = requests.request(
         method,
-        f"{SUAP_API_URL}{path}",
+        f"{oauth.suap.base_url}{path}",
         headers=headers,
         timeout=20,
         **kwargs,
@@ -164,40 +155,37 @@ def pretty(value):
         return "-"
     return value
 
-
 @app.route("/")
 def index():
-    if "access_token" in session:
-        return redirect(url_for("profile"))
-    return render_template(
-        "index.html",
-        oauth_enabled=bool(app.config["SUAP_OAUTH_CLIENT_ID"]),
-    )
+    return render_template("index.html")
 
-
-@app.route("/login", methods=["POST"])
+# Garante que a função se chama exatamente 'login'
+@app.route("/login")
 def login():
-    username = request.form.get("username", "").strip()
-    password = request.form.get("password", "")
+    redirect_uri = "http://localhost:5000/login/authorized"
+    return oauth.suap.authorize_redirect(redirect_uri)
 
-    if not username or not password:
-        flash("Informe usuario e senha do SUAP.", "danger")
-        return redirect(url_for("index"))
-
-    try:
-        token_data = suap_request(
-            "POST",
-            "/token/pair",
-            json={"username": username, "password": password},
-        )
-        save_token_session(token_data, username=username)
-        flash("Login realizado com sucesso.", "success")
-        return redirect(url_for("profile"))
-    except requests.HTTPError as error:
-        status = error.response.status_code if error.response else "?"
-        flash(f"Nao foi possivel autenticar no SUAP. Status {status}.", "danger")
+@app.route("/login/authorized", methods=["GET", "POST"])
+def authorized():
+    import logging
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug(">>> authorized chamado")
+    logging.debug(f">>> args: {request.args}")
     
-    return redirect(url_for("index"))
+    try:
+        error = request.args.get("error")
+        if error:
+            return f"Erro no login: {error}", 400
+
+        token = oauth.suap.authorize_access_token()
+        logging.debug(f">>> token: {token}")
+        session["access_token"] = token.get("access_token")
+        session["refresh_token"] = token.get("refresh_token")
+        fetch_user_data()
+        return redirect(url_for("profile"))
+    except Exception as e:
+        logging.debug(f">>> ERRO: {str(e)}")
+        return f"Erro: {str(e)}", 500
 
 
 @app.route("/logout")
@@ -209,7 +197,7 @@ def logout():
 
 @app.route("/perfil")
 @login_required
-def profile():
+def profile():    
     try:
         if not session.get("profile") or not session.get("student"):
             fetch_user_data()
@@ -250,3 +238,13 @@ def report_card():
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=False, use_reloader=False)
+
+import logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)

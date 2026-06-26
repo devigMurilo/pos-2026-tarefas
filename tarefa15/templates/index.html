@@ -29,22 +29,10 @@
 
     <section class="login-card">
         <div class="secundary-button suap-login"">
-           <h2>Faça login:</h2>
-            
-        </div>
-        <form class="fallback-login" method="post" action="{{ url_for('login') }}">
-            <label>
-                Usuario ou matricula
-                <input name="username" autocomplete="username" placeholder="20231181110022" required>
-            </label>
-
-            <label>
-                Senha
-                <input name="password" type="password" autocomplete="current-password" required>
-            </label>
-
-            <button class="primary-button" type="submit">Entrar pela API</button>
-        </form>
+            <a href="{{ url_for('login') }}">
+                <img src="{{ url_for('static', filename='suap-logo.png') }}" alt="Logo do SUAP" class="suap-logo">
+                Entrar com SUAP
+            </a>
     </section>
 </section>
 {% endblock %}
