@@ -2,14 +2,15 @@ import os
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
+from urllib.parse import urlparse
  
-from flask.cli import load_dotenv
+from dotenv import load_dotenv
 import requests
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 from authlib.integrations.flask_client import OAuth
 
 
-load_dotenv()
+load_dotenv(Path(__file__).with_name(".env"))
 
 app = Flask(__name__)
 app.debug = True
@@ -61,7 +62,7 @@ def suap_request(method, path, token=None, **kwargs):
 
     response = requests.request(
         method,
-        f"{oauth.suap.base_url}{path}",
+        f"{oauth.suap.api_base_url}{path}",
         headers=headers,
         timeout=20,
         **kwargs,
@@ -86,6 +87,7 @@ def get_user_context():
         "name": name,
         "username": username,
         "email": first_present(profile.get("email"), student.get("email_academico"), student.get("email_escolar")),
+        "avatar_url": first_present(profile.get("url_foto_75x100"), profile.get("url_foto"), student.get("url_foto")),
     }
 
 
@@ -162,7 +164,13 @@ def index():
 # Garante que a função se chama exatamente 'login'
 @app.route("/login")
 def login():
-    redirect_uri = "http://localhost:5000/login/authorized"
+    redirect_uri = os.getenv("REDIRECT_URI", "http://localhost:8000/login/authorized")
+    redirect_base = urlparse(redirect_uri)
+    expected_host_url = f"{redirect_base.scheme}://{redirect_base.netloc}/"
+
+    if request.host_url != expected_host_url:
+        return redirect(f"{expected_host_url.rstrip('/')}{url_for('login')}")
+
     return oauth.suap.authorize_redirect(redirect_uri)
 
 @app.route("/login/authorized", methods=["GET", "POST"])
@@ -239,12 +247,3 @@ def report_card():
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=False, use_reloader=False)
 
-import logging
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s %(levelname)s %(message)s',
-    handlers=[
-        logging.FileHandler("debug.log"),
-        logging.StreamHandler()
-    ]
-)
