@@ -164,7 +164,7 @@ def index():
 # Garante que a função se chama exatamente 'login'
 @app.route("/login")
 def login():
-    redirect_uri = os.getenv("REDIRECT_URI", "http://localhost:8000/login/authorized")
+    redirect_uri = os.getenv("REDIRECT_URI", "http://localhost:5000/login/authorized")
     redirect_base = urlparse(redirect_uri)
     expected_host_url = f"{redirect_base.scheme}://{redirect_base.netloc}/"
 
@@ -245,5 +245,5 @@ def report_card():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000, debug=False, use_reloader=False)
+    app.run(host="127.0.0.1", port=5000, debug=False, use_reloader=False)
 
