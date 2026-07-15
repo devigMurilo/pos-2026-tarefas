@@ -13,6 +13,10 @@ document.querySelector('#app').innerHTML = `
   <button id="buscar-post-user" type="button" class="counter">Buscar Posts</button>
 </section>
 
+<section id="resultado">
+
+</section>
+
 <section id="next-steps">
   <div id="social">
     <ul>
@@ -25,5 +29,5 @@ document.querySelector('#app').innerHTML = `
 `
 
 
-renderiazarUsers(document.querySelector('#buscar-user'))
+renderizarUsers(document.querySelector('#buscar-user'))
 

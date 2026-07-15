@@ -10,3 +10,4 @@ export async function getPosts() {
     const response = await fetch(`${API}posts/`)
     return await response.json()
 }
+
