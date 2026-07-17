@@ -1,29 +1,54 @@
-import {getUser, getPosts} from './api.js'
+import { getPessoas, getNave, getPlaneta } from './api.js'
 
-function renderUser(user, container) {
-    container.innerHTML = `
-    <h2>Usuários:</h2>
-    <li>
-        ${user.map(u => `<li>${u.name} - ${u.id}</li>`).join('')}
-    </li>
-    `
+
+function renderizarPessoas(container, pessoas) {
+    container.innerHTML = pessoas.map((pessoa) => `<p>${pessoa.name}</p>`).join('')
+}
+function renderizarNaves(container, naves) {
+    container.innerHTML = naves.map((nave) => `<p>${nave.name}</p>`).join('')
+}
+function renderizarPlanetas(container ,planetas) {
+    container.innerHTML = planetas.map((planeta) => `<p>${planeta.name}</p>`).join('')
 }
 
 
-
-
-export async function renderizarUsers(botao, container,) {
+export function buscarPessoas(botao) {
     botao.addEventListener('click', async () => {
         const container = document.getElementById('resultado')
-        container.innerHTML = '<p>Carregando...</p>'
+        container.innerHTML = ' <p>carregando...</p>'
         try {
-            const data = await getUser()
-            renderUser(data, container)
+            const data = await getPessoas()
+            renderizarPessoas(container, data.results)
+        } catch (error) {
+            container.innerHTML = '<p>Erro ao buscar personagens. Por favor, tente novamente.</p>'
         }
-        catch (error) {
-            container.innerHTML = '<p>Erro ao carregar os usuários.</p>'
-            console.log(error)
+        }
+        
+    )
+}
+
+export function buscarNave(botao) {
+    botao.addEventListener('click', async () => {
+        const container = document.getElementById('resultado')
+        container.innerHTML = ' <p>carregando...</p>'
+        try {
+            const data = await getNave()
+            renderizarNaves(container, data.results)
+        } catch (error) {
+            container.innerHTML = '<p>Erro ao buscar naves. Por favor, tente novamente.</p>'
         }
     })
-} 
+}
 
+export function buscarPlaneta(botao) {
+    botao.addEventListener('click', async () => {
+        const container = document.getElementById('resultado')
+        container.innerHTML = ' <p>carregando...</p>' 
+        try {
+            const data = await getPlaneta()
+            renderizarPlanetas(container, data.results)
+        } catch (error) {
+            container.innerHTML = '<p>Erro ao buscar planetas. Por favor, tente novamente.</p>'
+        }
+    })
+}

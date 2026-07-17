@@ -1,33 +1,26 @@
 import './style.css'
-import {renderizarUsers} from './wapper.js'
+import { buscarPessoas, buscarNave, buscarPlaneta} from './wapper.js'
+
 
 document.querySelector('#app').innerHTML = `
 <section id="center">
-  <div>
-    <h1>Procurar Usuarios:</h1>
-  
+  <div class="hero">
+    <h1>Star Wars </h1>
+    <h1>Personagens/Planetas/Naves</h1>
   </div>
-  <button id="buscar-user" type="button" class="counter">Buscar Usuário</button>
+  <div id="spacer">
+    <button id="buscar-personagem" type="button" class="counter">personagens </button>
 
-  <input type="text" id="user-id" placeholder="Digite o ID do usuário" />
-  <button id="buscar-post-user" type="button" class="counter">Buscar Posts</button>
-</section>
+    <button id="buscar-planeta" type="button" class="counter">planetas </button>
 
-<section id="resultado">
-
-</section>
-
-<section id="next-steps">
-  <div id="social">
-    <ul>
-      <li><a href="https://github.com/devigMurilo/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-    </ul>
+    <button id="buscar-nave" type="button" class="counter">naves </button>
   </div>
+  <div id="resultado">
+  </div>
+
 </section>
-
-
 `
 
-
-renderizarUsers(document.querySelector('#buscar-user'))
-
+buscarPessoas(document.getElementById('buscar-personagem'))
+buscarPlaneta(document.getElementById('buscar-planeta'))
+buscarNave(document.getElementById('buscar-nave'))

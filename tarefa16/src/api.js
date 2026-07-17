@@ -1,13 +1,48 @@
-const API = 'https://jsonplaceholder.typicode.com/'
+ const api = 'https://swapi.dev/api/'
 
-export async function getUser() {
-    const response = await fetch(`${API}users/`)
-    return await response.json()
+ export async function getPessoas() {
+    try {
+        const response = await fetch(`${api}people/`)
 
+        if (!response.ok) {
+            throw new Error('Erro na requisição')
+        }
+
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error('Erro ao buscar pessoas:', error)
+        throw error 
+    }
 }
 
-export async function getPosts() {
-    const response = await fetch(`${API}posts/`)
-    return await response.json()
+export async function getNave() {
+    try {
+        const response = await fetch(`${api}starships/`)
+        if (!response.ok) {
+            throw new Error('Erro na requisição')
+        }
+
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error('Erro ao buscar naves:', error)
+        throw error
+    }
 }
 
+export async function getPlaneta() {
+    try {
+        const response = await fetch(`${api}planets/`)
+
+        if (!response.ok) {
+            throw new Error('Erro na requisição')
+        }    
+
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error('Erro ao buscar planeta:', error)
+        throw error 
+        }
+};
